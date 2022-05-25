@@ -1,0 +1,40 @@
+all:
+  hosts:
+
+    your-host-1:
+      pipelining: true
+      ansible_ssh_user: root
+      ansible_host: 172.0.0.1
+      ansible_ssh_port: 22
+      wireguard_ip: 10.0.0.1
+
+    your-host-2:
+      pipelining: true
+      ansible_ssh_user: root
+      ansible_host: 172.0.0.2
+      ansible_ssh_port: 22
+
+      wireguard_ip: 10.1.0.1
+
+    your-host-3:
+      pipelining: true
+      ansible_ssh_user: root
+      ansible_host: 172.0.0.3
+      ansible_ssh_port: 22
+
+      wireguard_ip: 10.2.0.1
+
+    your-host-4:
+      pipelining: true
+      ansible_ssh_user: root
+      ansible_host: 172.0.0.9
+      ansible_ssh_port: 22
+
+      wireguard_ip: 10.3.0.1
+
+  vars:
+    ansible_become_method: su 
+    wireguard_mask_bits: 24
+    wireguard_port: 51871
+    ufw_enabled: true
+
